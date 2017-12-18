@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try-TODOLIST-At-Vue</title>
+    <style>
+      .done { text-decoration: line-through; }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <p>
+        <input type="text"
+               placeholder="Let's ADD TODO Item!"
+               v-model="newItemTitle"
+               v-on:keyup.enter="addTodo(newItemTitle)"></p>
+      </p>
+      <ul>
+        <li v-for="item in items">
+          <label v-bind:class="{ done: item.isChecked }">
+            <input type="checkbox" v-model="item.isChecked"> {{ item.title }}
+          </label>
+        </li>
+      </ul>
+      <button v-on:click="deleteTodo()">Delete Checked Item</button>
+    </div>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="./todo.js"></script>
+  </body>
+</html>
