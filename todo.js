@@ -1,3 +1,23 @@
+Vue.component('todo-item', {
+  props: ['title', 'isChecked', 'id'],
+  template: `
+  <li class="list-complete-item">
+    <label v-bind:class="{ done: isChecked }">
+      <input type="checkbox" v-model="childisChecked" v-on:change="deleteCheck"> {{ title }}
+    </label>
+  </li>`,
+  data: function() {
+    return {
+      childisChecked: this.isChecked
+    }
+  },
+  methods: {
+    deleteCheck: function() {
+      this.$emit('delete', this.childisChecked, this.id);
+    }
+  }
+})
+
 const vm = new Vue({
   el: '#app',
   data: {
@@ -6,10 +26,20 @@ const vm = new Vue({
     newItemTitle: ''
   },
   methods: {
+    updateCheck: function(childChecked, childIndex) {
+      for (let i = 0; i < this.items.length; i++) {
+        if(this.items[i].id === childIndex) {
+          this.items[i].isChecked = childChecked;
+          break;
+        }
+      }
+    },
     addTodo: function(newTitle) {
+      let date = Date.now();
       this.items.push({
         title: newTitle,
-        isChecked: false
+        isChecked: false,
+        id: date
       });
       this.newItemTitle = '';
       this.saveTodo();
