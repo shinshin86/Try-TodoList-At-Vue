@@ -1,0 +1,11 @@
+{
+  "name": "Try-TodoList-At-Vue",
+  "version": "0.0.1",
+  "dependencies": {
+    "vue": "^2.5.13",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "webpack": "^3.10.0"
+  }
+}
