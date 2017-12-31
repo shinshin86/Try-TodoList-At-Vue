@@ -1,2 +1,4 @@
 node_modules/
+build/
 .*.un~
+.DS_Store

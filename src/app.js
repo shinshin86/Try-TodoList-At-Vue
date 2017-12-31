@@ -1,3 +1,5 @@
+var Vue = require('vue');
+
 Vue.component('todo-item', {
   props: ['title', 'isChecked', 'id'],
   template: `
@@ -9,20 +11,19 @@ Vue.component('todo-item', {
   data: function() {
     return {
       childisChecked: this.isChecked
-    }
+    };
   },
   methods: {
     deleteCheck: function() {
       this.$emit('delete', this.childisChecked, this.id);
     }
   }
-})
+});
 
-const vm = new Vue({
+new Vue({
   el: '#app',
   data: {
-    items: [
-    ],
+    items: [],
     newItemTitle: ''
   },
   methods: {
@@ -63,4 +64,4 @@ const vm = new Vue({
   mounted: function() {
     this.loadTodo();
   },
-})
+});
