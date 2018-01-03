@@ -4,22 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
-    <link href="style.css" rel="stylesheet" type="text/css">
+    <!-- <link href="style.css" rel="stylesheet" type="text/css"> -->
     <title>Try-TODOLIST-At-Vue</title>
   </head>
   <body>
-    <div id="app">
-      <p>
-        <input type="text"
-               placeholder="Let's ADD TODO Item!"
-               v-model="newItemTitle"
-               v-on:keyup.enter="addTodo(newItemTitle)"></p>
-      </p>
-      <transition-group name="list-complete" tag="ul">
-        <todo-item v-for="item in items" v-bind="item" v-bind:key="item.id" v-on:delete="updateCheck"></todo-item>
-      </transition-group>
-      <button v-on:click="deleteTodo()">Delete Checked Item</button>
-    </div>
+    <div id="app"></div>
     <script src="build/bundle.js"></script>
   </body>
 </html>

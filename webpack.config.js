@@ -2,7 +2,7 @@ const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  entry: './src/app.js',
+  entry: './src/main.js',
   output: {
     path: __dirname,
     filename: './build/bundle.js'
@@ -43,8 +43,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-     // 'vue$': 'vue/dist/vue.esm.js'
-      'vue': 'vue/dist/vue.js'
+      'vue$': 'vue/dist/vue.esm.js'
     }
   }
 };
