@@ -25,7 +25,7 @@ export default {
     TodoItem
   },
   methods: {
-    ...mapActions([ LOAD_TODO ])
+    ...mapActions([ 'LOAD_TODO' ])
   }
 }
 </script>

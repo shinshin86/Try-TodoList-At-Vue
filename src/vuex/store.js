@@ -28,8 +28,13 @@ function addTodo(state) {
     isChecked: false,
     id: date
   });
-  state.newItemTitle = '';
   saveTodo(state.items);
+  changeTitle(state, '');
+  return state
+}
+
+function changeTitle(state, title) {
+  state.newItemTitle = title
   return state
 }
 
@@ -62,8 +67,8 @@ const actions = {
   },
   [UPDATE_CHECK]({ commit, state }) {
   },
-  [CHANGE_TITLE] ({ commit }, title) {
-    commit(CHANGE_TITLE, title)
+  [CHANGE_TITLE] ({ commit, state }, title ) {
+    commit(CHANGE_TITLE, changeTitle(state, title))
   },
   [ADD_TODO] ({ commit, state }) {
     commit(ADD_TODO, addTodo(state))
@@ -77,7 +82,8 @@ const actions = {
 }
 
 const getters = {
-  items: state => state.items
+  items: state => state.items,
+  newItemTitle: state => state.newItemTitle
 }
 
 const mutations = {
@@ -87,8 +93,8 @@ const mutations = {
   [UPDATE_CHECK] (state, items) {
     state.items = items
   },
-  [CHANGE_TITLE] (state, newItemTitle) {
-    state.newItemTitle = newItemTitle
+  [CHANGE_TITLE] (state) {
+    state = state
   },
   [ADD_TODO] (state) {
     state = state
