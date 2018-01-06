@@ -6,7 +6,8 @@ import {
   ADD_TODO,
   DELETE_TODO,
   SAVE_TODO,
-  LOAD_TODO
+  LOAD_TODO,
+  TODO_COUNT
 } from './mutation-types';
 
 Vue.use(Vuex);
@@ -35,13 +36,6 @@ function addTodo(state) {
 function changeTitle(state, title) {
   state.newItemTitle = title
   return state
-}
-
-function doneItemCount(items) {
-  doneItems = items.filter(function(item) {
-    return item.isChecked === false;
-  });
-  return doneItems.length
 }
 
 function doneCheck(items, id) {
@@ -93,12 +87,16 @@ const actions = {
   },
   [LOAD_TODO] ({ commit, state }) {
     commit(LOAD_TODO, loadTodo())
+  },
+  [TODO_COUNT] ({ commit, state }) {
+    commmit(TODO_COUNT, loadTodo().length)
   }
 }
 
 const getters = {
   items: state => state.items,
-  newItemTitle: state => state.newItemTitle
+  newItemTitle: state => state.newItemTitle,
+  count: state => state.items.length
 }
 
 const mutations = {
@@ -118,6 +116,9 @@ const mutations = {
     state.items = items
   },
   [LOAD_TODO] (state, items) {
+    state.items = items
+  },
+  [TODO_COUNT] (state, items) {
     state.items = items
   }
 }
