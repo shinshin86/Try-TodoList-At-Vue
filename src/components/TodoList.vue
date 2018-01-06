@@ -10,7 +10,7 @@
   <button @click.self="LOAD_TODO">LOAD BTN</button>
 </div>
 </template>
-  
+
 <script>
 import TodoItem from './TodoItem.vue'
 import { mapGetters, mapActions } from 'vuex'
@@ -31,3 +31,16 @@ export default {
   }
 }
 </script>
+
+<style>
+.list-complete-item {
+  transition: all 1s;
+}
+.list-complete-enter, .list-complete-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
+}
+.list-complete-leave-active {
+  position: absolute;
+}
+</style>
