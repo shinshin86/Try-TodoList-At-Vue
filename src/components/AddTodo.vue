@@ -1,6 +1,6 @@
 <template>
   <div>
-    <input @change.self="CHANGE_TITLE($event.target.value)" type="text" id="add-todo-text" :value="newItemTitle" >
+    <input @change.self="CHANGE_TITLE($event.target.value)" @keyup.enter="ADD_TODO" type="text" id="add-todo-text" :value="newItemTitle" >
     <i @click.self="ADD_TODO" class="">ADD</i>
   </div>
 </template>
