@@ -18,6 +18,9 @@ import { mapGetters, mapActions } from 'vuex'
 import { LOAD_TODO } from '../vuex/mutation-types'
 
 export default {
+  created() {
+    this.LOAD_TODO()
+  },
   computed: {
     ...mapGetters(['items'])
   },
