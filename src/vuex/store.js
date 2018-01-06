@@ -1,8 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import {
-  DELETE_CHECK,
-  UPDATE_CHECK,
+  DONE_CHECK,
   CHANGE_TITLE,
   ADD_TODO,
   DELETE_TODO,
@@ -38,11 +37,21 @@ function changeTitle(state, title) {
   return state
 }
 
-function deleteTodo(items) {
-  deleteItems = items.filter(function(item) {
+function doneItemCount(items) {
+  doneItems = items.filter(function(item) {
     return item.isChecked === false;
   });
-  saveTodo(deleteItems);
+  return doneItems.length
+}
+
+function doneCheck(items, id) {
+  items.forEach(function(item) {
+    if(item.id === id) {
+      item.isChecked = true;
+    }
+  });
+  saveTodo(items);
+  return items;
 }
 
 function saveTodo(items) {
@@ -50,11 +59,17 @@ function saveTodo(items) {
 }
 
 function loadTodo() {
-  let items = JSON.parse( localStorage.getItem('items') );
+  const items = JSON.parse( localStorage.getItem('items') );
+  let loadItems = [];
   if( !items ) {
-    items = [];
+    loadItems = [];
+  } else {
+    loadItems = items.filter(function(item) {
+      return item.isChecked === false;
+    })
   }
-  return items
+  console.log("load item : ", loadItems);
+  return loadItems;
 }
 
 const state = {
@@ -63,9 +78,9 @@ const state = {
 }
 
 const actions = {
-  [DELETE_CHECK] ({ commit, state }) {
-  },
-  [UPDATE_CHECK]({ commit, state }) {
+  [DONE_CHECK] ({ commit, state }, id) {
+    const items = JSON.parse( localStorage.getItem('items') );
+    commit(DONE_CHECK, doneCheck(items, id))
   },
   [CHANGE_TITLE] ({ commit, state }, title ) {
     commit(CHANGE_TITLE, changeTitle(state, title))
@@ -87,10 +102,7 @@ const getters = {
 }
 
 const mutations = {
-  [DELETE_CHECK](state, items) {
-    state.items = items
-  },
-  [UPDATE_CHECK] (state, items) {
+  [DONE_CHECK] (items) {
     state.items = items
   },
   [CHANGE_TITLE] (state) {

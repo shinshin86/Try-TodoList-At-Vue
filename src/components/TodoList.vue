@@ -7,11 +7,10 @@
       :item='item'>
     </todo-item>
   </transition-group>
-  <button @click.self="DELETE_TODO">Delete Checked Item</button><br>
   <button @click.self="LOAD_TODO">LOAD BTN</button>
 </div>
 </template>
-
+  
 <script>
 import TodoItem from './TodoItem.vue'
 import { mapGetters, mapActions } from 'vuex'
