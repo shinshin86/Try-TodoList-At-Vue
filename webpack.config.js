@@ -22,12 +22,12 @@ module.exports = {
       {
         test: /\.vue$/,
         exclude: /node_modules/,
-        loader: 'vue-loader',
-        options: {
-          loaders: {
-          }
-        }
+        loader: 'vue-loader'
       },
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader'
+      }
     ]
   },
   plugins: [

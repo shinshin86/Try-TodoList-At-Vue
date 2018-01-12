@@ -1,14 +1,14 @@
 <template>
-<div class="page-content">
-  <transition-group name="list-complete" tag="ul">
-    <todo-item
-      v-for='item in items'
-      :key='item.id'
-      :item='item'>
-    </todo-item>
-  </transition-group>
-  <button @click.self="LOAD_TODO">LOAD BTN</button>
-</div>
+  <div class="page-content">
+    <transition-group name="list-complete" tag="md-list">
+      <todo-item
+        v-for='item in items'
+        :key='item.id'
+        :item='item'>
+      </todo-item>
+    </transition-group>
+    <md-button class="md-raised md-primary" @click.self.native="LOAD_TODO">LOAD BTN</md-button>
+  </div>
 </template>
 
 <script>
