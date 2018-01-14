@@ -23,7 +23,7 @@
 
 <script>
   import { mapActions, mapGetters } from 'vuex'
-  import { CHANGE_TITLE, ADD_TODO } from '../vuex/mutation-types'
+  import { CHANGE_TITLE, ADD_TODO } from '../store/mutation-types'
 
   export default {
     methods: {

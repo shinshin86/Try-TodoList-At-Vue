@@ -12,15 +12,6 @@ import {
 
 Vue.use(Vuex);
 
-Vue.component('todo-item', {
-  props: ['title', 'isChecked', 'id'],
-  data: function() {
-    return {
-      childisChecked: this.isChecked
-    };
-  },
-});
-
 function addTodo(state) {
   let date = Date.now();
   state.items.push({

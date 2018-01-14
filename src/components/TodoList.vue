@@ -14,7 +14,7 @@
 <script>
 import TodoItem from './TodoItem.vue'
 import { mapGetters, mapActions } from 'vuex'
-import { LOAD_TODO } from '../vuex/mutation-types'
+import { LOAD_TODO } from '../store/mutation-types'
 
 export default {
   created() {

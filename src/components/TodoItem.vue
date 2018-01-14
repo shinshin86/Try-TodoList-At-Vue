@@ -4,7 +4,7 @@
   </md-list-item>
 </template>
 <script>
-  import { DONE_CHECK, LOAD_TODO } from '../vuex/mutation-types'
+  import { DONE_CHECK, LOAD_TODO } from '../store/mutation-types'
   import { mapActions } from 'vuex'
   export default {
     methods: {

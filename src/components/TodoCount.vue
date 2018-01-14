@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-  import { TODO_COUNT } from '../vuex/mutation-types'
+  import { TODO_COUNT } from '../store/mutation-types'
   import { mapActions, mapGetters } from 'vuex'
   export default {
     methods: {
