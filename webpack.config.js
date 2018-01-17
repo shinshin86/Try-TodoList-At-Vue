@@ -36,7 +36,6 @@ module.exports = {
     }]),
   ],
   devServer: {
-    contentBase: 'public',
     port: 3000,
     host: 'localhost',
     historyApiFallback: true,
