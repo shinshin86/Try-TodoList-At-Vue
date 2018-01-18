@@ -5,3 +5,4 @@ export const DELETE_TODO = 'DELETE_TODO';
 export const SAVE_TODO = 'SAVE_TODO';
 export const LOAD_TODO = 'LOAD_TODO';
 export const TODO_COUNT = 'TODO_COUNT';
+export const LOAD_DONE_TODO = 'LOAD_DONE_TODO';

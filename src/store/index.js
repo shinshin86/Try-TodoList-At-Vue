@@ -7,7 +7,8 @@ import {
   DELETE_TODO,
   SAVE_TODO,
   LOAD_TODO,
-  TODO_COUNT
+  TODO_COUNT,
+  LOAD_DONE_TODO,
 } from './mutation-types';
 
 Vue.use(Vuex);
@@ -43,14 +44,14 @@ function saveTodo(items) {
   localStorage.setItem('items', JSON.stringify(items));
 }
 
-function loadTodo() {
+function loadTodo(isChecked) {
   const items = JSON.parse( localStorage.getItem('items') );
   let loadItems = [];
   if( !items ) {
     loadItems = [];
   } else {
     loadItems = items.filter(function(item) {
-      return item.isChecked === false;
+      return item.isChecked === isChecked;
     })
   }
   console.log("load item : ", loadItems);
@@ -77,11 +78,14 @@ const actions = {
     commit(DELETE_TODO, deleteTodo())
   },
   [LOAD_TODO] ({ commit, state }) {
-    commit(LOAD_TODO, loadTodo())
+    commit(LOAD_TODO, loadTodo(false))
   },
   [TODO_COUNT] ({ commit, state }) {
     commmit(TODO_COUNT, loadTodo().length)
-  }
+  },
+  [LOAD_DONE_TODO] ({ commit, state }) {
+    commit(LOAD_TODO, loadTodo(true))
+  },
 }
 
 const getters = {
@@ -111,7 +115,10 @@ const mutations = {
   },
   [TODO_COUNT] (state, items) {
     state.items = items
-  }
+  },
+  [LOAD_DONE_TODO] (state, items) {
+    state.items = items
+  },
 }
 
 export default new Vuex.Store({

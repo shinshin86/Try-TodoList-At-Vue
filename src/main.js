@@ -5,6 +5,7 @@ import 'vue-material/dist/vue-material.css'
 import VueRouter from 'vue-router'
 
 import App from './App.vue'
+import DoneList from './components/DoneList.vue'
 import TodoHeader from './components/TodoHeader.vue'
 
 Vue.use(VueMaterial)
@@ -17,6 +18,13 @@ const router = new VueRouter({
       components: {
         header: TodoHeader,
         main: App
+      }
+    },
+    {
+      path: '/done',
+      components: {
+        header: TodoHeader,
+        main: DoneList
       }
     }
   ]
