@@ -9,10 +9,10 @@
     <md-sidenav class="md-left" ref="leftSidenav">
       <md-toolbar class="md-large">
         <div class="md-toolbar-container">
-          <router-link :to="'/'" tag="list-complete-item">HOME</router-link>
+          <router-link :to="'/'" tag="div">HOME</router-link>
         </div>
         <div class="md-toolbar-container">
-          <router-link :to="'/done'" tag="list-complete-item">DONE ITEMS</router-link>
+          <router-link :to="'/done'" tag="div">DONE ITEMS</router-link>
         </div>
       </md-toolbar>
     </md-sidenav>

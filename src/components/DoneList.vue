@@ -7,7 +7,6 @@
         :item='item'>
       </todo-item>
     </transition-group>
-    <md-button class="md-raised md-primary" @click.self.native="LOAD_TODO">LOAD BTN</md-button>
   </div>
 </template>
 <script>

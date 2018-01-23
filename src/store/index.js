@@ -4,7 +4,6 @@ import {
   DONE_CHECK,
   CHANGE_TITLE,
   ADD_TODO,
-  DELETE_TODO,
   SAVE_TODO,
   LOAD_TODO,
   TODO_COUNT,
@@ -54,7 +53,6 @@ function loadTodo(isChecked) {
       return item.isChecked === isChecked;
     })
   }
-  console.log("load item : ", loadItems);
   return loadItems;
 }
 
@@ -64,7 +62,7 @@ const state = {
 }
 
 const actions = {
-  [DONE_CHECK] ({ commit, state }, id) {
+  [DONE_CHECK] ({ commit }, id) {
     const items = JSON.parse( localStorage.getItem('items') );
     commit(DONE_CHECK, doneCheck(items, id))
   },
@@ -74,16 +72,13 @@ const actions = {
   [ADD_TODO] ({ commit, state }) {
     commit(ADD_TODO, addTodo(state))
   },
-  [DELETE_TODO] ({ commit, state }) {
-    commit(DELETE_TODO, deleteTodo())
-  },
-  [LOAD_TODO] ({ commit, state }) {
+  [LOAD_TODO] ({ commit }) {
     commit(LOAD_TODO, loadTodo(false))
   },
-  [TODO_COUNT] ({ commit, state }) {
-    commmit(TODO_COUNT, loadTodo().length)
+  [TODO_COUNT] ({ commit }) {
+    commit(TODO_COUNT, loadTodo().length)
   },
-  [LOAD_DONE_TODO] ({ commit, state }) {
+  [LOAD_DONE_TODO] ({ commit }) {
     commit(LOAD_TODO, loadTodo(true))
   },
 }
@@ -99,13 +94,10 @@ const mutations = {
     state.items = items
   },
   [CHANGE_TITLE] (state) {
-    state = state
+    state
   },
   [ADD_TODO] (state) {
-    state = state
-  },
-  [DELETE_TODO] (state, items ) {
-    state.items = items
+    state
   },
   [SAVE_TODO] (state, items) {
     state.items = items
