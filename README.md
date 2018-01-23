@@ -1,9 +1,38 @@
 # Try-TodoList-At-Vue
-Try TodoList at Vue.js
+TodoList at Vue.js and Vuex.
 
 ## What is this?
 
-This is created to learn Vue.js.
+This is created to learn Vue.js and Vuex.
+
+
+
+## How to use
+
+```bash
+# Git clone
+git clone https://github.com/shinshin86/Try-TodoList-At-Vue.git
+
+# Install
+yarn
+# or "npm install"
+
+# Development
+yarn run dev
+# Access localhost:3000
+
+# Build
+yarn run build
+
+# Lint check
+yarn run lint
+```
+
+
+
+
+
+## Reference
 
 I am looking at this page and implement it.<br>
 [Vue.jsミニハンズオン（TODOリスト作成）](https://qiita.com/moonglows76/items/358ef3cd1566c38ece3a)
