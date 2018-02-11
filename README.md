@@ -26,6 +26,9 @@ yarn run build
 
 # Lint check
 yarn run lint
+
+# Test
+yarn run test
 ```
 
 
