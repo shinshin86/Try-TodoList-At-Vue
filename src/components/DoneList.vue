@@ -1,5 +1,8 @@
 <template>
   <div class="page-content">
+    <md-card-header>
+      <div class="md-title">Done Count : {{ doneCount }}</div>
+    </md-card-header>
     <transition-group name="list-complete" tag="md-list">
       <todo-item
         v-for='item in items'
@@ -19,7 +22,7 @@ export default {
     this.LOAD_DONE_TODO()
   },
   computed: {
-    ...mapGetters(['items'])
+    ...mapGetters(['items', 'doneCount'])
   },
   components: {
     TodoItem

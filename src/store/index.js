@@ -86,7 +86,13 @@ const actions = {
 const getters = {
   items: state => state.items,
   newItemTitle: state => state.newItemTitle,
-  count: state => state.items.length
+  count: state => state.items.length,
+  doneCount: state => {
+    const doneItem = state.items.filter((item) => {
+      if(item.isChecked === true) return true
+    })
+    return doneItem.length
+  }
 }
 
 const mutations = {

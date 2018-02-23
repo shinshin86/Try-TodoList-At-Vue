@@ -1,7 +1,9 @@
 <template>
-  <div>
-    Your TODO count : {{ count }}
-  </div>
+  <md-card-header>
+    <div class="md-title">
+      Your TODO count : {{ count }}
+    </div>
+  </md-card-header>
 </template>
 <script>
   import { TODO_COUNT } from '../store/mutation-types'
