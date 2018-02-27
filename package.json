@@ -5,7 +5,7 @@
     "dev": "webpack-dev-server",
     "build": "node node_modules/webpack/bin/webpack.js",
     "lint": "eslint --ext .js src",
-    "test": "mocha test/index.test.js"
+    "test": "mocha"
   },
   "dependencies": {
     "css-loader": "^0.28.7",

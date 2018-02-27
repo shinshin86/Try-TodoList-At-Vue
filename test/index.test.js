@@ -26,19 +26,17 @@ describe('actions', () => {
       expect(getters.newItemTitle).to.equal("Test Title 2")
   })
 
-  // use localStorage
-  /*
-  it('DONE_CHECK', () => {
+  // use localStorage(Don't test)
+  it('DONE_CHECK => Do not test(use localStorage)', () => {
   })
-  it('ADD_TODO', () => {
+  it('ADD_TODO => Do not test(use localStorage)', () => {
   })
-  it('LOAD_TODO', () => {
+  it('LOAD_TODO => Do not test(use localStorage)', () => {
   })
-  it('TODO_COUNT', () => {
+  it('TODO_COUNT => Do not test(use localStorage)', () => {
   })
-  it('LOAD_DONE_TODO',() => {
+  it('LOAD_DONE_TODO => Do not test(use localStorage)',() => {
   })
-  */
 })
 
 describe('mutations', () => {
