@@ -11,6 +11,7 @@ module.exports = {
     "parserOptions": {
         "sourceType": "module"
     },
+    "plugins": ["prettier"],
     "rules": {
         "indent": [
             "error",
@@ -23,6 +24,12 @@ module.exports = {
         "quotes": [
             "error",
             "single"
+        ],
+        "prettier/prettier": [
+            "error", {
+                "singleQuote": true,
+                "semi": false
+            },
         ]
     }
 };

@@ -5,6 +5,7 @@
     "dev": "webpack-dev-server",
     "build": "node node_modules/webpack/bin/webpack.js",
     "lint": "eslint --ext .js src",
+    "lint-fix": "eslint --fix .js src",
     "test": "mocha"
   },
   "dependencies": {
@@ -25,8 +26,10 @@
     "chai": "^4.1.2",
     "copy-webpack-plugin": "^4.3.1",
     "eslint": "^4.14.0",
+    "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-vue": "^3.14.0",
     "mocha": "^5.0.0",
+    "prettier": "^1.11.1",
     "vue-loader": "^13.6.1",
     "vue-template-compiler": "^2.5.13",
     "webpack": "^3.10.0",
