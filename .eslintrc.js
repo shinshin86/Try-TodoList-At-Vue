@@ -6,12 +6,12 @@ module.exports = {
     },
     "extends": [
       "eslint:recommended",
-      "plugin:vue/recommended"
+      "plugin:vue/recommended",
+      "plugin:prettier/recommended"
     ],
     "parserOptions": {
         "sourceType": "module"
     },
-    "plugins": ["prettier"],
     "rules": {
         "indent": [
             "error",
