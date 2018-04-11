@@ -24,8 +24,11 @@ yarn run dev
 # Build
 yarn run build
 
-# Lint check
+# ESLint and Prettier check
 yarn run lint
+
+# ESLint and Prettier fix
+yarn run lint-fix
 
 # Test
 yarn run test
